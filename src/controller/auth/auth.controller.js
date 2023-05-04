@@ -11,6 +11,7 @@ router.post('/', async (req,res) => {
         console.log("hola")
         res.status(201).json ({status: 'succes', message: user})
     } catch (error) {
+        
         res.status(500).json ({status: 'error', error: 'Internal server error'})
     }
 })
