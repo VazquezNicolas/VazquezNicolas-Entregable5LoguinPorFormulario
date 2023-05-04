@@ -13,6 +13,7 @@ router.get('/', async (req,res) => {
         const cart = await Carts.findOne().populate("products.product")
         const productos = (cart.products)
         console.log(cart)
+        
         console.log(productos)
         res.render('carts', {
             cart,

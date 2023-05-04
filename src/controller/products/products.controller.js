@@ -10,6 +10,7 @@ const productsFile = new FilesDao('products.json')
 router.get('/',async (req,res)=>{
     let limit = req.query.limit
     let filtro = req.query.filtro
+    
     let page = parseInt(req.query.page);
 
     if(!limit) limit = 10
