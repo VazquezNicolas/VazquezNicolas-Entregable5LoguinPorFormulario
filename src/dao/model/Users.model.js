@@ -10,6 +10,7 @@ const collectionSchema = new mongoose.Schema({
         unique: true
     },
     age: Number,
+    rol: String,
     password: String,
 })
 const Users = mongoose.model(collectionName, collectionSchema)

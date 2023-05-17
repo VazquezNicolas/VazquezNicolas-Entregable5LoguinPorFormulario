@@ -28,6 +28,7 @@ app.use(
 )
 
 app.engine('handlebars', handlebars.engine())
+app.set('view engine', 'handlebars')
 app.set('views', __dirname + '/views')
 
 mongoConnect()

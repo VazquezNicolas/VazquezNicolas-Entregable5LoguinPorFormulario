@@ -21,10 +21,12 @@ router.post('/', async (req,res) => {
         req.session.user = {
             first_name: user.first_name,
             last_name: user.last_name,
+            rol: user.rol,
             email: user.email
         }
 
-        res.json ({status: 'succes', message: "Sesion iniciada"})
+        res.redirect('/api/products')
+        
     } catch (error) {
         console.log(error)
         res.status(500).json ({status: 'error', error: 'Internal server error'})
@@ -34,6 +36,7 @@ router.post('/', async (req,res) => {
 router.get('/logout', (req,res) => {
     req.session.destroy (error => {
         if(error) {return res.json({error})}
+        console.log("logout")
         res.redirect('/login')
     })
 })
