@@ -24,8 +24,11 @@ router.post('/', async (req,res) => {
             rol: user.rol,
             email: user.email
         }
-
-        res.redirect('/api/products')
+        return res.status(400).json({
+            status: 'succes',
+             error: 'Usuario logueado'
+            }) 
+    
         
     } catch (error) {
         console.log(error)

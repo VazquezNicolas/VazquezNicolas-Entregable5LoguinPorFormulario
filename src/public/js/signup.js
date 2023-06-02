@@ -21,7 +21,7 @@ form.addEventListener('submit', e => {
     method,
     body,
   })
-    .then(response => response.json())
-    .then(data => console.log(data))
-    .catch(error => console.log(error))
+  .then(response => response.json())
+  .then(data => alert(data.status))
+  .catch(error => console.log(error))
 })
